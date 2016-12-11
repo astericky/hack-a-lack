@@ -1,12 +1,29 @@
-const iframe = document.getElementById('target-page')
-const searchBar = document.querySelectorAll('.search-bar')
-const searchButton = document.querySelectorAll('.search-button')
+let iframe = document.getElementById('target-page')
+const searchBar = document.querySelectorAll('.search-bar')[0]
+const searchButton = document.querySelectorAll('.search-button')[0]
 
-iframe.src = 'http://sailthru.com'
+iframe.src = 'http://localhost:3000/sailthru.com'
 
-searchButton[0].addEventListener('click', () => {
-  iframe.src = searchBar[0].value
+searchBar.addEventListener('keypress', (e) => {
+  if (e.keyCode) {
+    iframe.src = `http://localhost:3000/${searchBar.value}`
+  }
 })
+console.log(iframe)
+// document.querySelectorAll('aside')[0].addEventListener('onmouseover', (e) => {
+//   console.log(`ONMOUSEOVER`)
+// })
+
+let nonIframeElements = document.querySelectorAll('aside, header')
+
+for (let nonIframeElement of nonIframeElements) {
+  nonIframeElement.addEventListener('mouseover', (e) => {
+    let hoverElement = iframe.contentWindow.document.querySelectorAll('.is-hover')[0]
+    if (hoverElement) {
+      hoverElement.classList.remove('is-hover')
+    }
+  })
+}
 
 // iframe.addEventListener('onmouseover', (e) => {
 //   console.log('HELLO')

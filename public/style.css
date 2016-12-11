@@ -16,14 +16,53 @@ header {
   background: #f9f9f9;
 }
 
-nav input {
-  width: 400px;
+header input {
+  width: 50%;
+  margin-bottom: 4px;
+}
+
+header label,
+header select {
+  display: inline-block;
+  font-size: .75em;
+}
+
+header select {
+  width: auto;
+  padding: 0;
+  border: none;
+  outline: none;
 }
 
 main {
   display: flex;
   flex-flow: wrap;
   flex-grow: 1;
+}
+
+input,
+select {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+
+input {
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555;
+  background-color: #fff;
+}
+
+select {
+  padding: 11px 10px 9px;
+  border: 1px solid #e3e5e8;
+  margin-right: 0;
+  font-size: 12px;
+  line-height: 1;
+  -webkit-appearance: none;
 }
 
 .content {
@@ -42,6 +81,8 @@ main {
 }
 
 .sidebar {
+  box-sizing: border-box;
   order: 1;
   width: 400px;
+  padding: 1em 1.5em;
 }

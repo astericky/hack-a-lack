@@ -8,14 +8,47 @@
   <body>
     <header>
       <nav>
-        <input type="text" class="search-bar"><button class="search-button">Search</button>
+        <label for="search-bar">Type url here</label>
+        <input type="text" class="search-bar">
+        <div class="spm-version-select select-container">
+          <select name="section" id="section">
+            <option value="v0.0.4">Personalize Version: 0.0.4</option>
+            <option value="v1.0.0">Personalize Version: 1.0.0</option>
+          </select>
+        </div>
       </nav>
     </header>
     <main>
       <section class="content">
         <iframe frameborder="0" id="target-page"></iframe>
       </section>
-      <aside class="sidebar"></aside>
+      <aside class="sidebar">
+        <div class="select-container">
+          <label for="mode">Mode</label>
+          <select name="mode" id="mode"></select>
+        </div>
+        <div class="input-container">
+          <label for="page">Page <i></i></label>
+          <input type="text" name="page">
+        </div>
+        <div class="select-container">
+          <label for="match-type">Match Type</label>
+          <select name="match-type" id="match-type"></select>
+        </div>
+        <div class="input-container">
+          <label for="page-element">Page Element <i></i></label>
+          <input type="text" name="page-element">
+        </div>
+        <div class="select-container">
+          <label for="section">Section</label>
+          <select name="section" id="section"></select>
+        </div>
+        <div class="input-button-container">
+          <label for="email">Preview as</label>
+          <input type="text" name="email">
+          <button class="preview-go-button">Go</button>
+        </div>
+      </aside>
     </main>
     <footer></footer>
     <script src="script.js"></script>
