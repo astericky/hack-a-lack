@@ -23,6 +23,9 @@ app.get('/:webpage', (req, res) => {
       body.slice(body.indexOf('</head>'), body.indexOf('</body>')),
       `<script>
         let body = document.querySelectorAll('body')[0]
+        let mode = document.getElementById('mode')
+        let page = document.querySelectorAll('input[name=page]')[0]
+
         body.addEventListener('mouseover', e => {
           let element = e.target
           let hoverElements = document.querySelectorAll('.is-hover')
@@ -44,7 +47,7 @@ app.get('/:webpage', (req, res) => {
           let classes = element.classList
           console.log(classes);
           let pageElement = document.querySelectorAll('input[name=page-element]')[0]
-          console.log(pageElement)
+          console.log('pageElement :: ', pageElement)
           // pageElement.value = classes
         })
       </script>`,
